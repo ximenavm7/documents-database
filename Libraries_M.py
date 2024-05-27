@@ -1,4 +1,4 @@
-from SQL_Methds import get_docContent
+from SQL_Methods import get_docContent
 from Preprocess_M import lemmatize
 from FreqTable_M import*
 

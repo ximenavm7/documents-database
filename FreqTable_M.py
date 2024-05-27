@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from SQL_Methds import store_Term
+from SQL_Methods import store_Term
 from Proximity_M import calc_similarity, calc_dissimilarity
 from gensim import corpora
 

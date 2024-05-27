@@ -11,6 +11,7 @@ def QueryChooser(language, retrieved_Docs, processedDocs, FreqT, reduced_FreqT):
                     3.Select another language\n""")
         qChoice = int(input("Type the number of the option: "))
         
+        # Compare similarity and sissimilarity of two documents
         if qChoice == 1:
             print("\n         You have selected: DOCUMENT SIMILARITY\n")
             d0 = int(input("Type the index of the first document: "))
@@ -24,8 +25,7 @@ def QueryChooser(language, retrieved_Docs, processedDocs, FreqT, reduced_FreqT):
             dissimilarity_2Docs = calc_dissimilarity(dFormula, reduced_FreqT, d0, d1)
             print(f"The dissimilarity of the two documents using {dFormula} is: ",  dissimilarity_2Docs)
 
-            
-        
+        # Type a consult and search which documents are the most and least similar to that consult    
         elif qChoice == 2:
             print("\n         You have selected: CONSULT SEARCH\n")
             n = int(input("Number of documents to retrieve: "))
@@ -48,6 +48,10 @@ def QueryChooser(language, retrieved_Docs, processedDocs, FreqT, reduced_FreqT):
             sleep(3)
             break
 
+        else:
+            print("\nNot valid, please try again")
+            sleep(1)
+
 def LibraryChooser():
     while True:
         print("""\n------------------------MAIN MENU------------------------
@@ -62,8 +66,6 @@ def LibraryChooser():
             retrieved_Docs, processedDocs, FreqT, reduced_FreqT = launch_Library(language)
             print(QueryChooser(language, retrieved_Docs, processedDocs, FreqT, reduced_FreqT))
             
-
-
         elif library == 2:
             language = "FR"
             retrieved_Docs, processedDocs, FreqT, reduced_FreqT = launch_Library(language)
@@ -71,13 +73,10 @@ def LibraryChooser():
 
         elif library == 3:
             print("\nThank you, goodbye!")
-            sleep(3)
+            sleep(1)
             break
         else:
             print("\nNot valid, please try again")
             sleep(1)
 
-
 LibraryChooser()
-
-
